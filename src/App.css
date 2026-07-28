@@ -22,3 +22,8 @@
 .ovo {
   overflow: hidden;
 }
+
+button {
+  padding: 16px;
+  min-width: 100px;
+}
