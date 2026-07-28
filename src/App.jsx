@@ -11,14 +11,14 @@ export default function App() {
     x.style.display = isEyesOpen == 0 ? "block" : "none";
   }
 
+  const myTimeout = setTimeout(blink, 1000); // IDK WHY IT IS BLINKING CONSTANTLY
+
   return (
     <div className="bg">
       <div className="ovo">
         <img className="ovo-open" src={"bit_def.png"} />
         <img className="ovo-close" src={"bit_blinks.png"}/>
       </div>
-
-      <button onClick={blink}>{isEyesOpen}</button>
     </div>
   )
 }
