@@ -7,13 +7,14 @@ export default function App() {
 
   function blink(){
     setIsEyesOpen(isEyesOpen == 0 ? 1 : 0)
-    setStyleDisplay(isEyesOpen == 0 ? 'flex' : 'none')
+    var x = document.querySelector(".ovo-open");
+    x.style.display = isEyesOpen == 0 ? "block" : "none";
   }
 
   return (
     <div className="bg">
       <div className="ovo">
-        <img className="ovo-open" src={"bit_def.png"} style={{display: {styleDisplay}}} />
+        <img className="ovo-open" src={"bit_def.png"} />
         <img className="ovo-close" src={"bit_blinks.png"}/>
       </div>
 
