@@ -14,7 +14,11 @@
   text-align: center;
 }
 
-.ovo {
+.ovo, .ovo-close, .ovo-open {
   width: 50vw;
   height: 50vw;
+}
+
+.ovo {
+  overflow: hidden;
 }
