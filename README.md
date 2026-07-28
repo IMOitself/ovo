@@ -8,7 +8,7 @@ a fun bot that may or may not be sentient ;)
 | <h2>challenge</h2> |
 | :-----------: |
 | never use AI. not even on google search. |
-| limited time to only 2 hours per day to code. |
+| only maximum of 2.5 hours per day to code. |
 
 <div align=left>
 
