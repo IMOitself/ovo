@@ -1,0 +1,14 @@
+.bg {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #2196F3;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: xx-large;
+  font-family: 'JetBrains Mono', monospace;
+  text-align: center;
+}
