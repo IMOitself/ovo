@@ -4,6 +4,7 @@ import './App.css'
 export default function App() {
   const [isEyesOpen, setIsEyesOpen] = useState(0);
   const [styleDisplay, setStyleDisplay] = useState('none');
+  const typingTimeout = null;
 
   function blink(){
     setIsEyesOpen(isEyesOpen == 0 ? 1 : 0)
@@ -16,9 +17,11 @@ export default function App() {
   return (
     <div className="bg">
       <div className="ovo">
+        <img className="ovo-input" src={"bit_input.png"} />
         <img className="ovo-open" src={"bit_def.png"} />
         <img className="ovo-close" src={"bit_blinks.png"}/>
       </div>
+      <input type='text'/>
     </div>
   )
 }
