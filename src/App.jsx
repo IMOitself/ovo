@@ -2,17 +2,13 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 let typingTimeout = null;
+let blinkingTimeout = null;
+let reopenEyesTimeout = null;
 
 export default function App() {
   const [isEyesOpen, setIsEyesOpen] = useState(0);
   const [styleDisplay, setStyleDisplay] = useState('none');
   const [inputText, setInputText] = useState('');
-
-  function blink(){
-    setIsEyesOpen(isEyesOpen == 0 ? 1 : 0)
-    var x = document.querySelector(".ovo-open");
-    x.style.display = isEyesOpen == 0 ? "block" : "none";
-  }
 
   function handleInputOnTyping(){
     var ovo_input = document.querySelector(".ovo-input");
@@ -26,10 +22,33 @@ export default function App() {
   }
 
   function handleInputOnChange(event){
-        setInputText(event.target.value);
+    setInputText(event.target.value);
   }
 
-  const myTimeout = setTimeout(blink, 1000); // IDK WHY IT IS BLINKING CONSTANTLY
+  function closeEyes(){
+    clearTimeout(blinkingTimeout);
+    let randomDuration = 1000 + Math.floor(Math.random() * 6000)
+
+    blinkingTimeout = setTimeout(() => {
+      var x = document.querySelector(".ovo-open").style.display = "none";
+      reopenEyes()
+      console.log(randomDuration)
+    }, randomDuration)
+  }
+
+  function reopenEyes(){
+    clearTimeout(reopenEyes)
+    reopenEyesTimeout = setTimeout(() => {
+      var x = document.querySelector(".ovo-open").style.display = "block";
+      blink()
+    }, 500)
+  }
+
+  function blink(){
+    closeEyes();
+  }
+
+  setTimeout(blink, 1000); // IDK WHY IT IS BLINKING CONSTANTLY
 
   return (
     <div className="bg">
